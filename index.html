@@ -1,19 +1,114 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
-<body>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
 
-<div class="container">
-  <h1>My First Bootstrap Page</h1>
-  <p>This is some text.</p>
-</div>
+		
+	</head>
+	<body>
+		<div class="container-fluid">			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="navbar-brand" >Reporte Final Moviles</div>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="nav-link" href="./index.html">
+							Acerca de la aplicación 
+							<span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./code.html">Codigo</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./eventual.html">Conectividad eventual</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./desempenio.html">Desempeño</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./alm.html">Almacenamiento y Seguridad</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
 
-</body>
+<br>
+			<div class="row">
+				<div class="col">
+					<center><img src="https://lh3.googleusercontent.com/hGa2O2MUcVu8RZgks7kguPgE4IXde3ptQjmUMXLuh5OOoBlEJbtd3Wb-Dk-kBMtJ-oI=s180-rw" alt="aplicaction logo"></center>
+				</div>
+
+				<div class="col-10">
+					<div class="container-fluid">
+
+						<h1>Beer Me Up - Your personal beer logging</h1>
+
+						<p>Según palabras del propio desarrollador:  “La aplicación es un registro personal de tus cervezas que te permite ingresar cada cerveza que tomes para asegurarte de recordarla para siempre.”</p>
+						<p>La aplicación permite mantener el registro de las cervezas consumidas, hacer ratings sobre las mismas, revisar el historial junto con lo cual se muestran distintas métricas. Adicionalmente agrega un sistema de monedas virtuales (Sin ningún tipo de valor fuera de la aplicación) para motivar a los usuarios a probar nuevas cervezas, recompensándolos con más puntos cuando hacen chek-in de cervezas en nuevas categorías. Actualmente está disponible en inglés y francés.</p>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid">
+				<h4> Descargar:</h4>
+				<p>La aplicación fue desarrollada en Flutter. Por lo que aprovechando que Flutter es cross-plataform, se lanzó la aplicación en ambas tiendas. </p>
+				<div class="container-fluid">
+					<div class="row">
+						<a href="https://play.google.com/store/apps/details?id=com.benoitletondor.beermeup"><img src="./playStore.png" style="width:150px;"></a>
+						<a href="https://apps.apple.com/us/app/beer-me-up-your-beer-logging/id1393867499"><img src="./appStore.svg" style="width:135px;"></a>
+					</div>
+					<br>
+				</div>
+				<h3>Acogida Por Parte De Los Usarios</h3>
+				<p>
+					La aplicación es relativamente nueva con su primer reléase a mediados del 2018. El mercado actual de aplicaciones es un mercado enorme, con millones de aplicaciones y una altísima competitividad. Los consumidores se han vuelto exigentes, por lo que cada vez es más difícil obtener reconocimiento entre los usuarios. Ante este panorama, la entrada de nuevas aplicaciones es un enorme reto, en especial si como en el caso de Beer Me Up es una iniciativa pequeña de una persona. 
+				</p>
+				<p>El primer paso para que una aplicación sea exitosa es que los usuarios la instalen, Actualmente la aplicación cuenta con mas de mil descargas. Lo que implica que una cifra importante de personas se sintió atraída por la temática que propone la aplicación.  Sin embargo, no esta cifra solo da una perspectiva de los usuarios que le llamo la atención lo suficiente para querer probarla, pero falta analizar que paso luego de probar la aplicación.</p>
+				<CENTER>
+					<img src="./reviewPlayStore.png">
+				</CENTER>
+				<p>Como se puede observar, la aplicación ha tenido buenas calificaciones. Con una clara mayoría con 5 estrellas. Sin embargo, muy pocos usuarios la han calificado, lo cual no es extraño si se tiene en cuenta la cantidad de descargas: alrededor de un 2% de los usuarios que instalaron la aplicación la calificaron.  Comparado con el 1.86% de <a href="https://play.google.com/store/apps/details?id=com.facebook.katana">Facebook</a> y 9.11 de <a href="https://play.google.com/store/apps/details?id=com.instagram.android">Instagram</a> (<i>números anteriores tienen altas tasas de error debido al redondeo hacia abajo de la playStore</i>) la baja cantidad de comentarios es justificada y no indica mala acogida por parte de los usuarios. Desafortunadamente, la aplicación no tiene comentarios (Al menos en Español e Ingles) en la playStore por lo que no se puede hacer un análisis de los mismos.</p>
+				<CENTER>
+					<img src="./reviewAppStore.png">
+				</CENTER>
+				<p>El panorama para IOs es el mismo, se mantiene la misma tendencia en las calificaciones. Esta vez con aun menos calificaciones por parte de los usuarios. Pero en este caso si se cuenta con un comentario. El cual propone posibles características que podrían ser implementadas para mejorar la aplicación. Es importante destacar que hace referencia a la cantidad de cervezas que tiene la aplicación. Esto es gracias a un API de <a href="https://untappd.com/">Untappd</a> que tambien ofrece una aplicación con un tópico similar pero mas funcionalidades implementada con Ionic.</p>
+				<CENTER>
+					<img src="./comentAppStore.png">
+				</CENTER>
+
+				<br>
+				<br>
+				<h3>Dispositivos Que Soportan La Aplicacion</h3>
+				<p>
+					El desarrollo en un framework multiplataforma como Flutter resulta bastante provechoso para los programadores ya que permite la compilación del código para ambos sistemas operativos y manejo automático de buena parte de las versiones de los sistemas operativos, sin necesidad de agregar código extra.
+				</p>
+				<div class="row">
+
+					<div class="col">
+						<h4>Android</h4>
+						<p>5.0 o posteriores (<b>89,30%</b>)</p>
+						<center><img src="./suportAndroid.png"></center>
+						<p>Fuente: <a href="https://developer.android.com/about/dashboards/index.html">https://developer.android.com/about/dashboards/index.html</a></p>
+					</div>
+					<div class="col">
+						<h4>IOs</h4>
+						<p>12.2 o posteriores. Compatible con iPhone, iPad, y iPod touch. (<b>+91%</b>)</p>
+						<center><img src="./suportIOS.png"></center>
+						<p>Fuente: <a href="https://developer.apple.com/support/app-store/">https://developer.apple.com/support/app-store/</a></p>
+					</div>
+				</div>
+			</div>			
+			<footer class="page-footer font-small red">
+				<div class="footer-copyright text-right py-3">Todos los datos en esta pagina fueron tomados en noviembre del 2019
+				</div>
+			</footer>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	</body>
 </body>
 </html>

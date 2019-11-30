@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+
+
+</head>
+<body>
+	<div class="container-fluid">			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="navbar-brand" >Reporte Final Moviles</div>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="./index.html">
+						Acerca de la aplicación 
+						<span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./code.html">Codigo</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./eventual.html">Conectividad eventual</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./desempenio.html">Desempeño</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="./alm.html">Almacenamiento y Seguridad</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="container-fluid">
+			<h3>Permisos</h3>
+			<p>Al crear una nueva aplicación en Flutter siempre se requiere del permiso de internet ya que este es necesario para el correcto funcionamiento de a app. Específicamente necesita tener permisos de red para poder comunicarse con el servidor y extraer y manipular los datos del usuario.</p>
+			<center><img src="./alm1.png"></center>
+			<br>
+
+			<p>Adicionalmente, se está haciendo uso de la ubicación del usuario para cambiar el idioma dependiendo del sitio donde se esté usando. Esto se realiza agregando la dependencia asociada a la geolocalización (flutter_localization) y la dependencia para la traducción (intl_translation). Estas dependencias permiten conocer la ubicación del usuario aun sin el permiso de este. Sin Embargo haciendo un poco mas de zoom en las mismas se puede notar que para el que extiende la clase solo está disponible la información del código del país por lo que no es un fallo de seguridad importante. </p>
+
+			<h3>Almacenamiento</h3>
+			<h4>Interno</h4>
+			<p>Para el almacenamiento en local se usa la librería shared preferences. Con la cual se almacenan tres cosas, saber si el usuario se encuentra logeado, saber si ya calificó la app y saber si tiene activados las analíticas. Cabe aclarar que solo mantiene el estado de di esta loggeado o no de lo contrario sería un gran problema de seguridad.</p>
+			<center><img src="./alm2.png"></center>
+
+			<h4>Externo</h4>
+			<p>Aparte de usar cache para almacenar algunas imágenes de manera temporal, el resto de los datos de la aplicación que cargan y actualizan de un servidor remoto. A excepción de la autentificación el código para conexión a datos externos se encuentra centralizado en una única clase que provee un punto de acceso para que las vistas puedan consumir los datos.</p>
+			<center><img src="./alm3.png"></center>
+
+			<p>La aplicación se comunica con 4 repositorios de datos diferentes, firbase en donde se maneja la lógica del negocio, todo lo que tiene que ver con los usuarios y su historial. UNTAPPD y BREWERY que son dos Apis que permiten poseen el registro de las cervezas y cullas implementaciones sobre una interfaz mas grande se encuentra en el código. Finalmente, sentry que es para subir reportes de error de la aplicación. Todos los anteriores requieren de llaves para su correcto funcionamiento, estas llaves no se encuentran en el repositorio y solo se da un archivo de ejemplo de donde irían.</p>
+			<center><img src="./alm4.png"></center>
+
+		</div>
+
+		<footer class="page-footer font-small red">
+			<div class="footer-copyright text-right py-3">Todos los datos en esta pagina fueron tomados en noviembre del 2019
+			</div>
+		</footer>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</body>
+</html>

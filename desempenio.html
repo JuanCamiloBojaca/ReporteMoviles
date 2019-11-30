@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+
+
+</head>
+<body>
+	<div class="container-fluid">			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="navbar-brand" >Reporte Final Moviles</div>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="./index.html">
+						Acerca de la aplicación 
+						<span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./code.html">Codigo</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./eventual.html">Conectividad eventual</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="./desempenio.html">Desempeño</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./alm.html">Almacenamiento y Seguridad</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="container-fluid">
+			<h4>Notas</h4>
+			<p>En general se nota una falta de llaves en los componentes lo que puede llevar a rendirizaciones extras inecesarias</p>
+			<h5>Nota 1</h5>
+			<p>Todos los datos de la aplicación se pasan atravez de streams lo que la hace mas eficiente porque evita la renderización de toda la pantalla. sin embargo en muchos casos son desaprovechados debido a que se usan como el primer componente en el build haciendo que todo el widget pase a la fase de armar el nuevo árbol y de renderización. Pero con al sobrecarga extra de tener el stream.</p>
+
+			<center><img src="./efi1.png"></center>
+			<br>
+
+			<h5>Nota 2</h5>
+			<p>Como patrón de actualización cada witget posee varios estados y una fabrica que retorna el estado en cada instante. Los estados son manejados de la misma forma en un stream. Con cada cambio en la app la parte del modelo decide qué estado sigue y este se pone en el stream para que posteriormente la vista se actualice cuando saque el nuevo dato del stream. Esta aproximación resulta adecuada a las vistas stateless ya que facilita enormemente el salto entre diferentes pasos de la aplicación como cargando datos,con error,etc. Ademas centraliza la lógica de los cambios de vista en una sola pantalla. El problema radica cuando se aplica a vistas más dinámicas como el hacer chekIn.</p>
+			<center><img src="./efi2.png"></center>
+			<p>En esta clase de vistas tenemos una barra con tres posibles tamaños seleccionar. En una aproximación sin streams cada uno de esos tamaños sería un wifged con un atributo de seleccionado o no, que cambia la forma como se pinta y una llave que lo identifique, luego en lugar de actualizar toda la vista basta con actualizar el componente que contiene a esos tres witgets. En la aplicación esta y la asignación estrellas son las únicas vistas dinámicas, en las que valdría la pena hacer el cambio.</p>
+
+			<br>
+			<h5>Nota 3</h5>
+			<p>Finalmente cabe resaltar el uso que se le da a la librería de imágenes para guardar en cache las imágenes. Esto es un factor importante que afecta el performance de la aplicación es el uso de cache para el almacenamiento de imágenes. Específicamente con la librería fluter cache network image. </p>
+
+			<p>Sin embargo, estas imágenes se hacen para todas las cervezas lo cual es un memory leak porque en lugar de usarlo con el historial y las del perfil, se usa en la representación de cervezas inclusive las que se buscan. Llenando el cache de imágenes que se van recomendando cada vez que se escribe una letra en el buscador y no se vuelven a ver. En lugar de solo las que van a ser usadas en las vistas principales como el perfil.</p>
+
+			<div class="container">
+				<center>
+					<div class="row">
+						<img src="./scren1.png">
+						<img src="./scren2.png">
+					</div>
+				</center>
+			</div>
+			
+<br>
+<br>
+			<h3>Analisis de codigo estatico</h3>
+
+			<p>Se uso  <a href="https://pub.dev/packages/analyzer">dartAnalizer</a>  para identificar problemas en el codigo. se probaron todas las Reglas y hints posibles.</p>
+
+			<div class="row">
+				<div class="col">
+					<h5>De los errores mas marcados estan la falta de declaracion de tipos en los metodos, tanto de retorno como de los parametros</h5>
+				</div>
+				<div class="col">
+					<center><img src="./performance1.png" style="width: 600px;"></center>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<h5>No usar variables finales si los datos no seran reasignados</h5>
+				</div>
+				<div class="col">
+					<center><img src="./performance5.png" style="width: 600px;"></center>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<h5>No especificar el tipo de la anotaciones (variables finales)</h5>
+				</div>
+				<div class="col">
+					<center><img src="./performance2.png" style="width: 600px;"></center>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<h5>El uso de comillas dobles en lugar de sencillas</h5>
+				</div>
+				<div class="col">
+					<center><img src="./performance3.png" style="width: 600px;"></center>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<h5>El uso inecesario del this</h5>
+				</div>
+				<div class="col">
+					<center><img src="./performance4.png" style="width: 600px;"></center>
+				</div>
+			</div>
+
+		</div>
+
+
+
+		<footer class="page-footer font-small red">
+			<div class="footer-copyright text-right py-3">Todos los datos en esta pagina fueron tomados en noviembre del 2019
+			</div>
+		</footer>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</body>
+</html>

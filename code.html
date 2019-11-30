@@ -1,0 +1,402 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<div class="container-fluid">			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="navbar-brand" >Reporte Final Moviles</div>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="./index.html">
+							Acerca de la aplicación 
+							<span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="./code.html">Codigo</a>
+
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./eventual.html">Conectividad eventual</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./desempenio.html">Desempeño</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./alm.html">Almacenamiento y Seguridad</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<br>
+			<div class="container-fluid">
+
+				<h4>Repositorio</h4>
+				<p>El repositorio es un repositorio pubiclo, link = <a href="https://github.com/benoitletondor/Beer-Me-Up">https://github.com/benoitletondor/Beer-Me-Up</a></p>
+				<br>
+
+				<h4>Commits</h4>
+				<p>El desarrollo de la aplicación inicio el 10 de marzo del 2019. Desde entonces ha habido 339 commits. Se cuenta con dos ramas, la principal y una de desarrollo. Con 175 y 164 commits respectivamente. Aunque hay un mal manejo de las mismas ya que en la mayoria de los casos solo se duplican los comits tal cual, con el mismo nombre. A continuacion la grafica de los commits (hecha con excel y python)</p>
+				<img src="./commits.png">
+				<p>
+					Como se puede observar aunque el repositorio sigue activo ya no se mantiene la integración continua del inicio de este.
+				</p>
+
+				<br>
+				<h4>Realses</h4>
+				<p>Hasta el dia de hoy han habido 11 realses</p>
+				<center><img src="./realses.png"></center>
+
+
+				<br>
+				<h4>Funcionalidades</h4>
+
+				<ul class="list-group list-group-flush">
+					<p>
+						Como se mencionó en el aparatado de la App, Las principales carteristas de la misma es mantener un registro de las cervezas, por lo que es necesario poder identificarla y buscar. Pero también el manejo de las monedas  virtuales y la calificación para una cerveza.
+					</p>
+					<li class="list-group-item"><img src="https://img.icons8.com/material-rounded/24/000000/task-completed.png">  Registrarse con Facebook | Google | Correo Email </li>
+					<li class="list-group-item"><img src="https://img.icons8.com/material-rounded/24/000000/task-completed.png">  Mantener sesión iniciada </li>
+					<li class="list-group-item"><img src="https://img.icons8.com/material-rounded/24/000000/task-completed.png">  Ver el historial de cervezas </li>
+					<li class="list-group-item"><img src="https://img.icons8.com/material-rounded/24/000000/task-completed.png">  Internacionalización </li>
+					<li class="list-group-item"><img src="https://img.icons8.com/material-rounded/24/000000/task-completed.png">  Ver e perfil del usuario </li>
+					<li class="list-group-item"><img src="https://img.icons8.com/material-rounded/24/000000/task-completed.png">  Ver las monedas de la semana </li>
+					<li class="list-group-item"><img src="https://img.icons8.com/material-rounded/24/000000/task-completed.png">  Ver las monedas del mes </li>
+					<li class="list-group-item"><img src="https://img.icons8.com/material-rounded/24/000000/task-completed.png">  Dar la cerveza con mejor puntuación </li>
+					<li class="list-group-item"><img src="https://img.icons8.com/material-rounded/24/000000/task-completed.png">  Dar la cerveza con más registros </li>
+					<li class="list-group-item"><img src="https://img.icons8.com/material-rounded/24/000000/task-completed.png">  Dar la categoría de cerveza con más registros </li>
+					<li class="list-group-item"><img src="https://img.icons8.com/material-rounded/24/000000/task-completed.png">  Mantener las cervezas recientemente registradas </li>
+					<li class="list-group-item"><img src="https://img.icons8.com/material-rounded/24/000000/task-completed.png">  Buscar una cerveza por el nombre </li>
+					<li class="list-group-item"><img src="https://img.icons8.com/material-rounded/24/000000/task-completed.png">  Asignar las monedas basados en el historial </li>
+					<li class="list-group-item"><img src="https://img.icons8.com/material-rounded/24/000000/task-completed.png">  Registrar una nueva cerveza </li>
+					<li class="list-group-item"><img src="https://img.icons8.com/material-rounded/24/000000/task-completed.png">  Calificar una cerveza </li>
+					<li class="list-group-item"><img src="https://img.icons8.com/material-rounded/24/000000/task-completed.png">  Cambiar la calificación de una cerveza </li>
+					<li class="list-group-item"><img src="https://img.icons8.com/material-rounded/24/000000/task-completed.png">  Ver la descripción de una cerveza </li>
+				</ul>
+
+				<br>
+				<h4>Arquitectura</h4>
+				<div class="row">
+					<div class="col-8">
+						<p>La aplicación sigue la arquitectura MVC, distribuida en 3 carpetas principales model, page y service. Las cuales representan modelo vista y controlador respectivamente. La carpeta localization se encarga de la internacionalización (tanto de tener las palabras en varios idiomas como escoger el idioma a mostrar).  En la carpeta common se encuentran witgets comunes a lo largo de la aplicación. Los anterior incluye widgets para mostrar el error, la visualización de base de las cervezas entre otros. También se encuentran funciones de utilidad como el formateador de fechas. Además también incluye los witgets de base que se extienden y sobre escriben a lo largo de la aplicación, como los witgets de visualización de modelos</p>
+
+						<p>Los modelos de la carpeta Model son VOs, con los obejetos de negocio de la aplicación, en lugar de solo manejar un id revisar si son iguales dos VOs se sobre escribe el operador de comparación, y se le agrega un hash code a cada Vo.</p>
+
+						<p>Por otra parte, se encuentra la carpeta service que hace referencia al controlador. Los archivos contenidos en este paquete cumplen la función de notificar a la vista sobre el estado de la aplicación. Mediante streams el controlador se encarga de pasar modelos a la vista. Igualmente encapsula la lógica de negocio y la validación de campos y forms. Finalmente Aísla las peticiones de manera que la vista solo consume métodos asíncronos con modelos.</p>
+
+						<p>Finalmente tenemos la capeta page, que es la carpeta encargada de las vistas, Teniendo en cuenta que fluter permite el manejo dynamico de sus interfaces mediante navigators y states. Podría llegarse a considerar que tienen un poco de la lógica del controlador, por lo menos en lo que respecta a los cambios de vistas, sin embargo, todo el manejo de los datos se hace en el controlador, entre los widgest hay unos encargados del despliegue de los modelos. Los widgest se definieron en diferentes archivos dart, facilitando su mantenimiento y están agrupados por carpetas que son las vistas principales de la aplicación.</p>
+					</div>
+					<div class="col">
+						<center>
+							<img src="./arq1.png">
+						</center>
+					</div>
+				</div>
+				
+
+				<br>
+				<h4>Librerias <i>(Expandible)</i></h4>
+
+				<div class="container">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h5 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1" style="color:green">
+										shared_preferences
+									</a>
+								</h5>
+							</div>
+							<div id="collapse1" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<p> <b>fuente: </b><a href="https://pub.dev/packages/shared_preferences">https://pub.dev/packages/shared_preferences</a></p>
+									<p>La librería está enfocada en el almacenamiento y acceso de datos simples en el celular. Y ese es precisamente el uso que se le da en la aplicación. Con shared preferences se mantienen los datos del usuario registrado en local.</p>
+									<center><img src="./import1.png"></center>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h5 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse2" style="color:green">
+										tuple
+									</a>
+								</h5>
+							</div>
+							<div id="collapse2" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<p> <b>fuente: </b><a href="https://pub.dev/packages/tuple">https://pub.dev/packages/tupleshared_preferences</a></p>
+									<p>Como su nombre lo indica es la implementación de una tupla genérica, la cual permite almacenar dos datos de distintos tipos. Su uso en la aplicación es para el emular el retorno múltiple en los métodos, sin crear clases auxiliares.</p>
+									<center><img src="./import2.png"></center>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h5 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse3" style="color:green">
+										cached_network_image
+
+									</a>
+								</h5>
+							</div>
+							<div id="collapse3" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<p> <b>fuente: </b><a href="https://pub.dev/packages/cached_network_image">https://pub.dev/packages/cached_network_image</a></p>
+									<p>Almacena las imágenes descargadas en cache, para su posterior reutilización. Dado que en la aplicación se muestran las imágenes de la cervezas, esta librería juega un papel importante en el app, reduciendo los tiempo de carga.</p>
+									<center><img src="./import3.png"></center>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h5 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse4" style="color:green">
+										sealed_unions
+									</a>
+								</h5>
+							</div>
+							<div id="collapse4" class="panel-collapse collapse in">
+								<div class="panel-body">
+									description
+
+									<p> <b>fuente: </b><a href="https://pub.dev/packages/sealed_unions">https://pub.dev/packages/sealed_unions</a></p>
+									<p>Las clases selladas son clases con atributos inmutables que mantienen una única referencia, funcionan como Enums de alto nivel. En la aplicación se usan para evitar crear múltiples instancias de objetos iguales. Esta librería es el principal motivo por el que se sobre escribieron los métodos de comparación de los modelos..</p>
+									<center><img src="./import4.png"></center>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h5 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse5" style="color:green">
+										flutter_stream_friends
+									</a>
+								</h5>
+							</div>
+							<div id="collapse5" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<p> <b>fuente: </b><a href="https://pub.dev/packages/flutter_stream_friends">https://pub.dev/packages/flutter_stream_friends</a></p>
+									<p>Provee una capa superior de manejo de streams. En la aplicación los streams son el medio de comunicación de la vista y el controlador se da mediante streams, Con esta librería se provee una implementación de alto nivel para los mismos.</p>
+									<center><img src="./import5.png"></center>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h5 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse6" style="color:green">
+										intl | intl_translation
+									</a>
+								</h5>
+							</div>
+							<div id="collapse6" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<p> <b>fuente: </b><a href="https://pub.dev/packages/intl_translation">https://pub.dev/packages/intl_translation</a></p>
+									<p>
+										Este paquete proporciona extracción de mensajes y generación de código a partir de mensajes traducidos para el paquete Intl. En la aplicación es necesaria para el correcto funcionamiento de la intenacionalizacion.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h5 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse7" style="color:green">
+										google_sign_in | flutter_facebook_login
+									</a>
+								</h5>
+							</div>
+							<div id="collapse7" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<p> <b>fuente: </b><a href="hhttps://pub.dev/packages/google_sign_in">https://pub.dev/packages/google_sign_in</a>      <a href="https://pub.dev/packages/flutter_facebook_login">https://pub.dev/packages/flutter_facebook_login</a></p>
+									<p>
+										Son paquetes para manejar el login con cuentas de Facebook o Google, que son dos opciones que la aplicación ofrece además de con correo email.
+									</p>
+									<center><img src="./import7.1.png"></center>
+									<center><img src="./import7.2.png"></center>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h5 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse8" style="color:green">
+										firebase_auth
+									</a>
+								</h5>
+							</div>
+							<div id="collapse8" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<p> <b>fuente: </b><a href="https://pub.dev/packages/firebase_auth">https://pub.dev/packages/firebase_auth</a></p>
+									<p>Este paquete permite logearse y registrarse en una cuenta de firebase. Es la base del login de la aplicacion </p>
+									<center><img src="./import8.png"></center>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="container">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h5 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse9" style="color:green">
+										cloud_firestore
+									</a>
+								</h5>
+							</div>
+							<div id="collapse9" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<p> <b>fuente: </b><a href="https://pub.dev/packages/cloud_firestore">https://pub.dev/packages/cloud_firestore</a></p>
+									<p>Cloud firestore es el paquete que actúa como punto de conexión con la base de firabase, posee soporte para métodos asíncronos para leer y modificar documentos, streams para escuchar cambios, entre otras cosas. En la aplicación se usa para almacenar los ratings, pedir las bebidas y contar las monedas.</p>
+									<center><img src="./import9.png"></center>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h5 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse10" style="color:green">
+										firebase_analytics
+									</a>
+								</h5>
+							</div>
+							<div id="collapse10" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<p> <b>fuente: </b><a href="https://pub.dev/packages/firebase_analytics">https://pub.dev/packages/firebase_analytics</a></p>
+									<p>Es un paquete de firebase que permite subir las interciones que el usuario tuvo con la aplicación, En la aplicación se implemente este sistema en una clase que hace log de las interacionde del usuario: cambios de pantalla, los chekout, los puntajes, etc.</p>
+									<center><img src="./import10.png"></center>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h5 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse11" style="color:green">
+										firebase_remote_config
+									</a>
+								</h5>
+							</div>
+							<div id="collapse11" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<p> <b>fuente: </b><a href="https://pub.dev/packages/firebase_remote_config">https://pub.dev/packages/firebase_remote_config</a></p>
+									<p>Al usar Remote Config, crea valores predeterminados en la aplicación que controlan el comportamiento y la apariencia de su aplicación. La aplicación controla cuándo se aplican las actualizaciones, y con frecuencia puede buscar actualizaciones y aplicarlas con un impacto insignificante en el rendimiento. Este permite modificar la apariencia de la app sin necesida de crear actualizaciones, mediante el cambio de paramteros.</p>
+									<center><img src="./import11.png"></center>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="container">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h5 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse12" style="color:green">
+										sentry
+									</a>
+								</h5>
+							</div>
+							<div id="collapse12" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<p> <b>fuente: </b><a href="https://pub.dev/packages/sentry">https://pub.dev/packages/sentry</a></p>
+									<p>Es un paquete para reportar errores que ocurren en la aplicación en una pagina web. <a href="https://sentry.io">https://sentry.io</a>. La aplicación atrapa algunos errores y los publica</p>
+									<center><img src="./import12.png"></center>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h5 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse13" style="color:green">
+										flutter_html
+									</a>
+								</h5>
+							</div>
+							<div id="collapse13" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<p> <b>fuente: </b><a href="https://pub.dev/packages/flutter_html">https://pub.dev/packages/flutter_html</a></p>
+									<p>Es un pluging para renderizar código estatico en HTML. En la aplicación se usa para los términos y condiciones, que están como strings en la aplicación pero en ese formato.</p>
+									<center><img src="./import13.png"></center>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+
+
+				<footer class="page-footer font-small red">
+					<div class="footer-copyright text-right py-3">Todos los datos en esta pagina fueron tomados en noviembre del 2019
+					</div>
+				</footer>
+			</div>
+
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		</body>
+		</html>
